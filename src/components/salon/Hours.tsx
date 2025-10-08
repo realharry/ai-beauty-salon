@@ -4,7 +4,7 @@ import { Clock, MapPin, Phone, Mail } from "lucide-react"
 export function Hours() {
   return (
     <section id="hours" className="py-20">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Visit Us

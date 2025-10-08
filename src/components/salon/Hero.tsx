@@ -11,8 +11,8 @@ export function Hero({ onOpenChat }: HeroProps) {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50 dark:from-pink-950/20 dark:via-rose-950/20 dark:to-amber-950/20" />
-      <div className="container relative px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-8">
+      <div className="container relative px-4 md:px-6 mx-auto">
+        <div className="flex flex-col items-center text-center space-y-8 max-w-5xl mx-auto">
           <div className="space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
               <Sparkles className="h-4 w-4" />

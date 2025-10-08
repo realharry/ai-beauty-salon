@@ -3,8 +3,8 @@ import { Heart } from "lucide-react"
 export function Footer() {
   return (
     <footer id="contact" className="border-t bg-secondary/20">
-      <div className="container px-4 md:px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-3">
+      <div className="container px-4 md:px-6 py-12 mx-auto">
+        <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
           <div>
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
               Glamour Haven

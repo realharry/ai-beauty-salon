@@ -12,7 +12,7 @@ export function Gallery() {
 
   return (
     <section id="gallery" className="py-20 bg-secondary/30">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Our Salon
@@ -22,7 +22,7 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {images.map((image, index) => (
             <Card key={index} className="overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow">
               <div className={`aspect-video bg-gradient-to-br ${image.color} dark:opacity-70 relative overflow-hidden`}>

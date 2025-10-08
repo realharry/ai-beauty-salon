@@ -79,7 +79,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-20 bg-secondary/30">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Our Services
@@ -89,7 +89,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
