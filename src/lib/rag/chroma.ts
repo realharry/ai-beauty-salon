@@ -6,14 +6,25 @@ const COLLECTION_NAME = "salon_knowledge"
 
 export async function getChromaClient() {
   if (!chromaClient) {
+    // Parse the CHROMA_URL to extract host and port
+    const chromaUrl = process.env.CHROMA_URL || "http://localhost:8000"
+    const url = new URL(chromaUrl)
+    
     chromaClient = new ChromaClient({
-      path: process.env.CHROMA_URL || "http://localhost:8000"
+      host: url.hostname,
+      port: parseInt(url.port) || 8000,
     })
   }
   return chromaClient
 }
 
 export async function initializeRAG() {
+  // Skip initialization if ChromaDB is not configured
+  if (!process.env.CHROMA_URL) {
+    console.log("ChromaDB not configured, using fallback data")
+    return null
+  }
+
   try {
     const client = await getChromaClient()
 
@@ -49,6 +60,12 @@ export async function initializeRAG() {
 }
 
 export async function queryRAG(query: string, nResults: number = 3) {
+  // Skip ChromaDB query if not configured
+  if (!process.env.CHROMA_URL) {
+    console.log("ChromaDB not configured, using fallback data")
+    return salonData.slice(0, nResults).map(d => d.content)
+  }
+
   try {
     const client = await getChromaClient()
 
